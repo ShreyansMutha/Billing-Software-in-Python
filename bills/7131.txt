@@ -1,0 +1,21 @@
+		Welcome
+Bill Number : 7131
+Customer Name : Shreyans Mutha
+Phone Number : 9403123941
+=====================================
+Products        		QTY		Price
+=====================================
+Bath Soap        		1		40
+Face Wash        		2		120
+Hair Gel         		1		140
+Body Lotion      		3		540
+Food Oil         		1		180
+Wheat            		1		240
+Tea              		1		150
+-------------------------------------
+Cosmetic Tax          		Rs. 42.0
+-------------------------------------
+Grocery Tax           		Rs. 57.0
+-------------------------------------
+Total Bill            		Rs. 1509.0
+_____________________________________

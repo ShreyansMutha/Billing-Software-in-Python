@@ -1,0 +1,26 @@
+		Welcome
+Bill Number : 2350
+Customer Name : Shree
+Phone Number : 9876543210
+=====================================
+Products        		QTY		Price
+=====================================
+Bath Soap        		1		40
+Face Cream       		1		120
+Face Wash        		2		120
+Body Lotion      		1		180
+Rice             		1		80
+Daal             		1		60
+Tea              		1		150
+Frooti           		1		60
+Limca            		1		140
+-------------------------------------
+Cosmetic Tax          		Rs. 23.0
+-------------------------------------
+Grocery Tax           		Rs. 29.0
+-------------------------------------
+Cold Drinks Tax       		Rs. 14.0
+-------------------------------------
+Total Bill            		Rs. 1016.0
+_____________________________________
+Thank You...Visit Again...!!

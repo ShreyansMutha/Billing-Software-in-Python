@@ -1,0 +1,7 @@
+1.Assign Enter Key to Total Function
+2.Phone No. Must be of only 10 digits
+3.No. of items must be only int type
+4.New window Must Contain :- i]Calculator
+			    ii]Stock check
+----------------------------------------------------
+

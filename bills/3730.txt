@@ -1,0 +1,24 @@
+		Welcome
+Bill Number : 3730
+Customer Name : Nidhi
+Phone Number : 8485868807
+=====================================
+Products        		QTY		Price
+=====================================
+Bath Soap        		1		40
+Face Wash        		1		60
+Body Lotion      		2		360
+Rice             		3		240
+Daal             		2		120
+Maza             		4		160
+Sprite           		2		360
+-------------------------------------
+Cosmetic Tax          		Rs. 23.0
+-------------------------------------
+Grocery Tax           		Rs. 36.0
+-------------------------------------
+Cold Drinks Tax       		Rs. 36.4
+-------------------------------------
+Total Bill            		Rs. 1435.4
+_____________________________________
+Thank You...Visit Again...!!!

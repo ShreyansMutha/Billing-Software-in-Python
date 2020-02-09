@@ -1,0 +1,24 @@
+		Welcome
+Bill Number : 3314
+Customer Name : Amar Narhare
+Phone Number : 9845678942
+=====================================
+Products        		QTY		Price
+=====================================
+Bath Soap        		1		40
+Face Wash        		1		60
+Hair Gel         		1		140
+Rice             		1		80
+Maza             		1		40
+Coca-cola        		1		120
+Frooti           		2		120
+-------------------------------------
+Cosmetic Tax          		Rs. 12.0
+-------------------------------------
+Grocery Tax           		Rs. 8.0
+-------------------------------------
+Cold Drinks Tax       		Rs. 19.6
+-------------------------------------
+Total Bill            		Rs. 639.6
+_____________________________________
+Thank You...Visit Again...!!!

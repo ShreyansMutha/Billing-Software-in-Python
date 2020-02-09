@@ -1,0 +1,26 @@
+		Welcome
+Bill Number : 2307
+Customer Name : Shreyans Mutha
+Phone Number : 9403123941
+=====================================
+Products        		QTY		Price
+=====================================
+Bath Soap        		1		40
+Face Wash        		1		60
+Body Lotion      		1		180
+Food Oil         		1		180
+Wheat            		1		240
+Tea              		1		150
+Coca-cola        		2		240
+Frooti           		2		120
+Thumbs up        		3		540
+Limca            		1		140
+-------------------------------------
+Cosmetic Tax          		Rs. 14.0
+-------------------------------------
+Grocery Tax           		Rs. 57.0
+-------------------------------------
+Cold Drinks Tax       		Rs. 72.8
+-------------------------------------
+Total Bill            		Rs. 2033.8
+_____________________________________

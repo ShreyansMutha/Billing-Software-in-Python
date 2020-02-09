@@ -1,0 +1,15 @@
+		Welcome
+Bill Number : 9764
+Customer Name : omkar
+Phone Number : 9834702877
+=====================================
+Products        		QTY		Price
+=====================================
+Bath Soap        		1		40
+Face Wash        		3		180
+Body Lotion      		1		180
+-------------------------------------
+Cosmetic Tax          		Rs. 20.0
+-------------------------------------
+Total Bill            		Rs. 420.0
+_____________________________________
