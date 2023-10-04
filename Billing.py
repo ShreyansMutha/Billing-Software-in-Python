@@ -1,12 +1,13 @@
 from tkinter import *
 import math, random, os
 from tkinter import messagebox
+import keyboard
 import datetime
 class Bill_App:
     def __init__(self, root):
         self.root = root
         self.root.geometry("1350x700+0+0")
-        self.root.title("SHOP APP")
+        self.root.title("Super Market App")
         bg_color = "#3b5998"
         date_time = datetime.datetime.now()
         date_now = date_time.strftime("%d/%m/%Y")
@@ -18,25 +19,25 @@ class Bill_App:
         NowDate = Label(dateTimeFrame, text="Date: " + date_now, bg=bg_color, fg="gold",
                         font=("times new roman", 18, "bold"))
         NowDate.pack(side=RIGHT, fill=BOTH)
-        NowTime = Label(dateTimeFrame, text="Time: " + time_now, bg=bg_color, fg="gold",
+        NowTime = Label(dateTimeFrame, text="LogIn Time: " + time_now, bg=bg_color, fg="gold",
                         font=("times new roman", 18, "bold"))
         NowTime.pack(side=LEFT, fill=BOTH)
-        title_lbl = Label(dateTimeFrame, text="SUPER MARKET", bg=bg_color, fg="black",
+        title_lbl = Label(dateTimeFrame, text="SUPER MARKET", bg=bg_color, fg="white",
                           font=("times new roman", 60, "bold"))
         title_lbl.pack(fill=BOTH)
         dateTimeFrame.pack(side=TOP, fill=BOTH)
         # ============Menu Bar
 
-        DropDownMenuToShowcase = Menu(root)
-        self.root.configure(menu=DropDownMenuToShowcase)
-        WhatWeDo = Menu(DropDownMenuToShowcase)
-        DropDownMenuToShowcase.add_cascade(label="Check", menu=WhatWeDo)
-        DropDownMenuToShowcase.add_command(label="Calculator")
-        DropDownMenuToShowcase.add_command(label="Credits")
-        DropDownMenuToShowcase.add_command(label="Help")
-        WhatWeDo.add_command(label="Check Stock of Cosmetics")
-        WhatWeDo.add_command(label="Check Stock of Grocery")
-        WhatWeDo.add_command(label="Check Stock of Cold Drinks")
+        # DropDownMenuToShowcase = Menu(root)
+        # self.root.configure(menu=DropDownMenuToShowcase)
+        # WhatWeDo = Menu(DropDownMenuToShowcase)
+        # DropDownMenuToShowcase.add_cascade(label="Check", menu=WhatWeDo)
+        # DropDownMenuToShowcase.add_command(label="Calculator")
+        # DropDownMenuToShowcase.add_command(label="Credits")
+        # DropDownMenuToShowcase.add_command(label="Help")
+        # WhatWeDo.add_command(label="Check Stock of Cosmetics")
+        # WhatWeDo.add_command(label="Check Stock of Grocery")
+        # WhatWeDo.add_command(label="Check Stock of Cold Drinks")
 
         # ============Cosmetics
         self.soap = IntVar()
@@ -70,8 +71,8 @@ class Bill_App:
         self.c_name = StringVar()
         self.c_phon = StringVar()
         self.bill_no = StringVar()
-        x = random.randint(1000, 9999)
-        self.bill_no.set(str(x))
+        self.x = 1
+        self.bill_no.set((datetime.datetime.now()).strftime("%d%m%H%M")+str(self.x))
         self.search_bill = StringVar()
 
         # ============Customer Detail Frame
@@ -103,7 +104,10 @@ class Bill_App:
                           font="arial 12 bold").grid(row=0, column=6,
                                                      padx=10,
                                                      pady=10)
-
+        bill_btn = Button(F1, text="Print", command=self.print_bill, width=10, bd=7, bg="LightGray",
+                          font="arial 12 bold").grid(row=0, column=7,
+                                                     padx=10,
+                                                     pady=10)
         # ===============Cosmetics Frame
         F2 = LabelFrame(self.root, relief=GROOVE, text="Cosmetics", font=("times new roman", 15, "bold"), fg="gold",
                         bg=bg_color)
@@ -231,11 +235,11 @@ class Bill_App:
                        relief=SUNKEN).grid(row=5, column=1, padx=10, pady=10)
 
         # ===============Bill Area
-        F5 = Frame(self.root, bd=10, relief=GROOVE, bg="LightGray")
+        F5 = Frame(self.root, bd=10, relief=GROOVE, bg="LightGray", cursor="dot")
         F5.place(x=1012, y=180, width=340, height=380)
         bill_title = Label(F5, text="Bill", font="arial 15 bold", bd=7, relief=GROOVE).pack(fill=X)
         scrol_y = Scrollbar(F5, orient=VERTICAL)
-        self.txtarea = Text(F5, yscrollcommand=scrol_y.set)
+        self.txtarea = Text(F5, yscrollcommand=scrol_y.set , cursor="dot")
         scrol_y.pack(side=RIGHT, fill=Y)
         scrol_y.config(command=self.txtarea.yview)
         self.txtarea.pack(fill=BOTH, expand=1)
@@ -298,7 +302,7 @@ class Bill_App:
 
 
         self.welcome_bill()
-
+        keyboard.add_hotkey('enter', self.total)
     def total(self):
                 
         self.c_s_p = self.soap.get() * 40
@@ -365,7 +369,8 @@ class Bill_App:
 
     def welcome_bill(self):
         self.txtarea.delete('1.0', END)
-        self.txtarea.insert(END, "\t\tWelcome")
+        self.txtarea.insert(END, f"\tWelcome To Super Market\t")
+        self.txtarea.insert(END, f"\nDate : {(datetime.datetime.now()).strftime("%d:%m:%y")} \t\t Time : {(datetime.datetime.now()).strftime("%H:%M:%S")}")
         self.txtarea.insert(END, f"\nBill Number : {self.bill_no.get()}")
         self.txtarea.insert(END, f"\nCustomer Name : {self.c_name.get()}")
         self.txtarea.insert(END, f"\nPhone Number : {self.c_phon.get()}")
@@ -434,7 +439,7 @@ class Bill_App:
                 self.txtarea.insert(END, "\n-------------------------------------")
             if self.cold_drink_tax.get() != "Rs. 0.0":
                 self.txtarea.insert(END, f"\nCold Drinks Tax       \t\t{self.cold_drink_tax.get()}")
-                self.txtarea.insert(END, "\n-------------------------------------")
+                self.txtarea.insert(END, "\n=====================================")
 
             self.txtarea.insert(END, f"\nTotal Bill            \t\tRs. {self.Total_bill}")
             self.txtarea.insert(END, "\n_____________________________________")
@@ -476,8 +481,7 @@ class Bill_App:
             self.c_name.set("")
             self.c_phon.set("")
             self.bill_no.set("")
-            x = random.randint(1000, 9999)
-            self.bill_no.set(str(x))
+            self.bill_no.set((datetime.datetime.now()).strftime("%d%m%H%M")+str(self.x))
             self.search_bill.set("")
             self.welcome_bill()
 
@@ -487,6 +491,7 @@ class Bill_App:
             self.bill_data = self.txtarea.get('1.0', END)
             f1 = open("bills/" + str(self.bill_no.get()) + ".txt", "w")
             f1.write(self.bill_data)
+            self.x = self.x+1
             f1.close()
         else:
             return
@@ -507,9 +512,23 @@ class Bill_App:
                 f1.close()
                 present = "Yes"
         if present == "no":
-            messagebox.showerror("Error", "Bll Not Found")
+            messagebox.showerror("Error", "Bill Not Found")
             self.clear_data()
 
+    def print_bill(self):
+        present = "no"
+        for i in os.listdir("bills/"):
+            if i.split('.')[0] == self.search_bill.get():
+                f1 = open(f"bills/{i}", "r")
+                self.txtarea.delete('1.0', END)
+                for d in f1:
+                    self.txtarea.insert(END, d)
+                f1.close()
+                present = "Yes"
+        if present == "no":
+            messagebox.showerror("Error", "First Search with bill No.")
+    
+    
 
 
 root = Tk()
